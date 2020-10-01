@@ -2,7 +2,7 @@
 
 ![Fractals](https://github.com/BojanSof/Fractals/blob/master/images/screenshot_mandelbrot.png "Screenshot of the program")
 
-This program contains collection of [fractals](https://en.wikipedia.org/wiki/Fractal), which can be accessed from a simple gui. Few of them have unique properties, which can be easily changed from the gui. Also, you can save the fractal as an image, with prefered width and height.
+This program contains collection of [fractals](https://en.wikipedia.org/wiki/Fractal), which can be accessed from a simple gui. Few of them have unique properties, which can be easily changed from the gui. Also, you can save the fractal as an image, with preferred width and height.
 
 ## List of fractals
 
@@ -74,7 +74,7 @@ Many optimisations and additions can be added spcifically to Mandelbrot set, lik
 
 # Example Images generated with the Mandelbrot set
 
-Data for the examples (like number of iterations, real and imaginary part minimum and maximum values) are from this [site](http://math.hws.edu/eck/js/mandelbrot/java/MandelbrotSettings/index.html), which I found very useful during the creation of Mandelbrot set part of the project.
+Data for the examples (like number of iterations, real and imaginary part minimum and maximum values) are mainly taken from this [site](http://math.hws.edu/eck/js/mandelbrot/java/MandelbrotSettings/index.html), which I found very useful during the creation of Mandelbrot set part of the project.
 
 ![Example 1](https://github.com/BojanSof/Fractals/blob/master/images/mandelbrot/mandelbrot1.png "Example 1")
 ![Example 2](https://github.com/BojanSof/Fractals/blob/master/images/mandelbrot/mandelbrot2.png "Example 2")
