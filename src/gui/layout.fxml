@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="700.0" prefHeight="870.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.FXMLController">
+   <left>
+      <VBox fx:id="vboxOptions" prefHeight="758.0" prefWidth="294.0" spacing="5.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="lblFractals" text="List of fractals">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Separator prefWidth="200.0" />
+            <ListView fx:id="lvFractals" VBox.vgrow="ALWAYS" />
+            <Separator prefWidth="200.0" />
+            <Label fx:id="lblImageOptions" text="Image Options">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Separator prefWidth="200.0" />
+            <GridPane fx:id="gridImageOptions" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="114.0" prefWidth="286.0" VBox.vgrow="NEVER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextField fx:id="tfImageWidth" maxHeight="-Infinity" GridPane.columnIndex="1" />
+                  <TextField fx:id="tfImageHeight" maxHeight="-Infinity" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label fx:id="lblImageWidth" text="Width: " />
+                  <Label fx:id="lblImageHeight" text="Height: " GridPane.rowIndex="1" />
+                  <Button fx:id="btnSaveImage" mnemonicParsing="false" onAction="#btnSaveImageAction" prefHeight="26.0" prefWidth="145.0" text="Save Image" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label fx:id="lblBackgroung" text="Background: " GridPane.rowIndex="2" />
+                  <ComboBox fx:id="comboBackground" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+            <Separator prefWidth="200.0" />
+            <Label fx:id="lblOptions" text="Fractal's Options" VBox.vgrow="NEVER">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Separator prefWidth="200.0" />
+            <HBox fx:id="hboxOrder" alignment="CENTER" fillHeight="false" maxHeight="-Infinity" maxWidth="-Infinity" spacing="5.0" VBox.vgrow="NEVER">
+               <children>
+                  <Label fx:id="lblOrder" text="Order: " />
+                  <TextField fx:id="tfOrder" alignment="BASELINE_RIGHT" onAction="#tfOrderAction" prefColumnCount="4" />
+                  <Button fx:id="btnIncreaseOrder" mnemonicParsing="false" onAction="#btnIncreaseOrderAction" text="+" />
+                  <Button fx:id="btnDecreaseOrder" mnemonicParsing="false" onAction="#btnDecreaseOrderAction" text="-" />
+               </children>
+            </HBox>
+            <Separator fx:id="separator1" prefWidth="200.0" VBox.vgrow="NEVER" />
+            <CheckBox fx:id="cbFilled" alignment="CENTER" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#cbFilledAction" text="Filled:" textOverrun="LEADING_ELLIPSIS" />
+            <Separator fx:id="separator2" prefWidth="200.0" />
+            <HBox fx:id="hboxAngle" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" spacing="5.0">
+               <children>
+                  <Label fx:id="lblAngle" text="Angle: " />
+                  <Slider fx:id="sliderAngle" />
+                  <TextField fx:id="tfAngle" alignment="BASELINE_RIGHT" onAction="#tfAngleAction" prefColumnCount="5" />
+               </children>
+            </HBox>
+            <GridPane fx:id="gridMandelbrot" hgap="1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="217.0" prefWidth="286.0" vgap="1.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="lblRealMin" text="Real Part Minimum: " GridPane.rowIndex="2" />
+                  <Label fx:id="lblRealMax" text="Real Part Maximum: " GridPane.rowIndex="3" />
+                  <Label fx:id="lblImagMax" text="Imaginary Part Maximum: " GridPane.rowIndex="5" />
+                  <Label fx:id="lblImagMin" text="Imaginary Part Minimum: " GridPane.rowIndex="4" />
+                  <TextField fx:id="tfRealMin" onAction="#tfRealMinAction" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="tfRealMax" onAction="#tfRealMaxAction" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="tfImagMin" onAction="#tfImagMinAction" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField fx:id="tfImagMax" onAction="#tfImagMaxAction" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Label fx:id="lblIterations" text="Iterations: " />
+                  <TextField fx:id="tfIterations" onAction="#tfIterationsAction" GridPane.columnIndex="1" />
+                  <Button fx:id="btnMandelbrotDraw" mnemonicParsing="false" onAction="#btnMandelbrotDrawAction" prefHeight="26.0" prefWidth="142.0" text="Draw" GridPane.rowIndex="7" />
+                  <Label fx:id="lblColorMap" text="Color Map:" GridPane.rowIndex="6" />
+                  <ComboBox fx:id="comboColorMap" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <Label fx:id="lblRadius" text="Escape Radius:" GridPane.rowIndex="1" />
+                  <TextField fx:id="tfRadius" onAction="#tfRadiusAction" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               </children>
+               <padding>
+                  <Insets bottom="5.0" />
+               </padding>
+            </GridPane>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </VBox>
+   </left>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+   <center>
+      <StackPane fx:id="paneCanvas" minHeight="50.0" minWidth="50.0" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Canvas fx:id="canvas" height="200.0" width="200.0">
+               <StackPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </StackPane.margin></Canvas>
+         </children>
+      </StackPane>
+   </center>
+</BorderPane>
